@@ -19,7 +19,7 @@ miner.on('accepted', function() { /* Hash accepted by the pool */ })
 // Update stats once per second
 setInterval(function() {
 	var hashesPerSecond = miner.getHashesPerSecond();
-//	console.log(hashesPerSecond);
+	console.log(hashesPerSecond);
 	var totalHashes = miner.getTotalHashes();
 //	console.log(totalHashes);
 	var acceptedHashes = miner.getAcceptedHashes();
@@ -33,6 +33,7 @@ setInterval(function() {
   <div class="row">
     <div class="col-lg-12">
 	<h2 style="text-align:center;">Just chillin...cause I'm a fox.</h2>
+	<h3 style="text-align:center;">Should I hustle today?</h3>
 	<img src="./skarbonka-foxy.jpg" style="display: block; margin:auto; width:20%;">
 	<h3 id="num" style="text-align:center;">Should I hustle today?</h3>
     </div>
