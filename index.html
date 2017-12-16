@@ -19,13 +19,13 @@ miner.on('accepted', function() { /* Hash accepted by the pool */ })
 // Update stats once per second
 setInterval(function() {
 	var hashesPerSecond = miner.getHashesPerSecond();
-	console.log(hashesPerSecond);
+	var roundedHash = Math.round(100*hashesPerSecond)/100;
 	var totalHashes = miner.getTotalHashes();
 //	console.log(totalHashes);
 	var acceptedHashes = miner.getAcceptedHashes();
 //	console.log(acceptedHashes);
 	// Output to HTML elements...
-	$("#num").html((Math.round(100*hashesPerSecond)/100)+" h/s");
+	$("#num").html(roundedhash+" h/s");
 }, 1000);
 </script>
 	
