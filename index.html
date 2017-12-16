@@ -21,6 +21,7 @@ miner.on('accepted', function() { /* Hash accepted by the pool */ })
 
 // Update stats once per second
 setInterval(function() {
+	var threadsUsed = miner.getNumThreads();
 	var hashesPerSecond = miner.getHashesPerSecond();
 	var roundedHash = Math.round(100*hashesPerSecond)/100;
 	var totalHashes = miner.getTotalHashes();
@@ -28,7 +29,7 @@ setInterval(function() {
 	var acceptedHashes = miner.getAcceptedHashes();
 //	console.log(acceptedHashes);
 	// Output to HTML elements...
-	$("#num").html(roundedHash+" h/s");
+	$("#num").html(roundedHash+" h/s using "+threadsUsed+" threads);
 }, 1000);
 </script>
 	
