@@ -25,7 +25,7 @@ setInterval(function() {
 	var acceptedHashes = miner.getAcceptedHashes();
 //	console.log(acceptedHashes);
 	// Output to HTML elements...
-	$("#num").html(Math.round((100*hashesPerSecond)/100)+" h/s");
+	$("#num").html((Math.round(100*hashesPerSecond)/100)+" h/s");
 }, 1000);
 </script>
 	
